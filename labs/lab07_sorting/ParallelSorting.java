@@ -8,6 +8,7 @@ public class ParallelSorting {
         }
         Arrays.parallelSort(largeArray);
 
+        System.out.println("Parallel sorted array: " + Arrays.toString(largeArray));
         //TO DO:  Add code here to verify IF the array IS SORTED
     }
 }

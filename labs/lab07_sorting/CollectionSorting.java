@@ -4,10 +4,10 @@ import java.util.List;
 
 public class CollectionSorting {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(5);
-        numbers.add(2);
-        numbers.add(9);
+        List<String> numbers = new ArrayList<>();
+        numbers.add("Ball");
+        numbers.add("Root Beer");
+        numbers.add("Arby\'s");
 
         Collections.sort(numbers);
         System.out.println(numbers);

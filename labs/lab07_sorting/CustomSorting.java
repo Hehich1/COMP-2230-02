@@ -18,7 +18,12 @@ public class CustomSorting {
         String[] words = {"banana", "apple", "grape", "orange"};
         // TO DO USE COMPARATOR TO SORT IN ASCENDING ORDER.
          
-        
+        Arrays.sort(words, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                return a.compareTo(b); // Sort in ascending order
+            }
+        });
 
         for (String word : words) {
             System.out.print(word + " ");

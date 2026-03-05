@@ -20,7 +20,11 @@ public class BasicSorting {
 
         // TO DO - Sort an array of custom objects (e.g., Student) 
         // based on a specific attribute (e.g., name or grade)
+        
+        String[] things = {"Hockey", "Magic", "Ball"};
+        Arrays.sort(things);
 
+        System.out.println("Sorted things: " + Arrays.toString(things));
 
         // TO DO - PRINT THE SORTED ARRAY OF CUSTOM OBJECTS
 

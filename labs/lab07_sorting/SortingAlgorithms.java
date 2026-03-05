@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SortingAlgorithms {
 
     /** Bubble Sort - Stable */
@@ -115,28 +117,29 @@ public class SortingAlgorithms {
         arr[high] = temp;
         return i + 1;
     }
+
+
+
+//Run the code with the following test cases:
+    public static void main(String[] args){
+        int[] arr1 = {64, 34, 25, 12, 22, 11, 90};
+        bubbleSort(arr1);
+        System.out.println("Bubble Sorted: " + Arrays.toString(arr1));
+
+        int[] arr2 = {64, 25, 12, 22, 11};
+        selectionSort(arr2);
+        System.out.println("Selection Sorted: " + Arrays.toString(arr2));
+
+        int[] arr3 = {12, 11, 13, 5, 6};
+        insertionSort(arr3);
+        System.out.println("Insertion Sorted: " + Arrays.toString(arr3));
+
+        int[] arr4 = {38, 27, 43, 3, 9, 82, 10};
+        mergeSort(arr4, 0, arr4.length - 1);
+        System.out.println("Merge Sorted: " + Arrays.toString(arr4));
+
+        int[] arr5 = {64, 34, 25, 12, 22, 11, 90};
+        quickSort(arr5);
+        System.out.println("Quick Sorted: " + Arrays.toString(arr5));
+    }
 }
-
-/* 
-Run the code with the following test cases:
-
-int[] arr1 = {64, 34, 25, 12, 22, 11, 90};
-bubbleSort(arr1);
-System.out.println("Bubble Sorted: " + Arrays.toString(arr1));
-
-int[] arr2 = {64, 25, 12, 22, 11};
-selectionSort(arr2);
-System.out.println("Selection Sorted: " + Arrays.toString(arr2));
-
-int[] arr3 = {12, 11, 13, 5, 6};
-insertionSort(arr3);
-System.out.println("Insertion Sorted: " + Arrays.toString(arr3));
-
-int[] arr4 = {38, 27, 43, 3, 9, 82, 10};
-mergeSort(arr4, 0, arr4.length - 1);
-System.out.println("Merge Sorted: " + Arrays.toString(arr4));
-
-int[] arr5 = {64, 34, 25, 12, 22, 11, 90};
-quickSort(arr5);
-System.out.println("Quick Sorted: " + Arrays.toString(arr5));
-*/
