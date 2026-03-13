@@ -10,6 +10,8 @@ Complete the following problems.
 
 This is not a valid binary search tree. What is wrong with it?
 
+
+
 ```
      32
     /  \
@@ -18,7 +20,7 @@ This is not a valid binary search tree. What is wrong with it?
  5   38
 ```
 
-**Answer:** 
+**Answer:** Leave 38 is bigger than parent 32
 
 ## Problem 2
 
@@ -28,7 +30,7 @@ Use the Binary Search Tree insertion algorithm to insert the keys: 1, 2, 3, 4, 5
 
 What is the height of the tree?
 
-**Answer:** 
+**Answer:** height is 6
 
 ## Problem 3
 
@@ -52,8 +54,8 @@ public static int sumByIndex(List<Integer> list) {
 ```
 
 **Answers:**  
-ArrayList:  
-LinkedList:  
+ArrayList:  O(n)
+LinkedList:  O(n^2)
 
 ## Problem 4
 
@@ -79,8 +81,8 @@ public static int sumWithIterator(List<Integer> list) {
 ```
 
 **Answers:**  
-ArrayList:  
-LinkedList:  
+ArrayList:  O(n)
+LinkedList:  O(n)
 
 ## Problem 5
 
@@ -104,8 +106,8 @@ public static void copy(List<Integer> fromList,
 ```
 
 **Answers:**  
-ArrayList:  
-LinkedList:  
+ArrayList:  O(n)
+LinkedList:  O(n)
 
 ## Problem 6
 
@@ -129,8 +131,8 @@ public static void copyReverseA(List<Integer> fromList,
 ```
 
 **Answers:**  
-ArrayList:  
-LinkedList:  
+ArrayList:  O(n^2)
+LinkedList:  O(n)
 
 ## Problem 7
 
@@ -155,8 +157,8 @@ public static void copyReverseB(List<Integer> fromList,
 ```
 
 **Answers:**  
-ArrayList:  
-LinkedList:  
+ArrayList:  O(n)
+LinkedList:  O(n^2)
 
 ## Problem 8
 
@@ -199,13 +201,13 @@ public static void copyScramble(List<Integer> fromList,
 ```
 
 **Worst-case Answers:**  
-ArrayList:  
+ArrayList:  O(n^2)
 Description:  
 
-LinkedList:  
+LinkedList:  O(n^2)
 Description:  
 
 **Average-case Answers:**  
-ArrayList:  
+ArrayList:  O(n^2)
 
-LinkedList:  
+LinkedList:  O(n^2)
