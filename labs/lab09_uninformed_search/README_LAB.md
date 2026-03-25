@@ -1,7 +1,7 @@
 # Uninformed Search Algorithms Lab
 
 ## Overview
-In this lab, you will implement and test three fundamental uninformed search algorithms: Breadth First Search (BFS), Depth First Search (DFS), and Uniform Cost Search (UCS). These algorithms are used to navigate through state spaces to find paths between nodes.
+In this lab, you will study and test three fundamental uninformed search algorithms: Breadth First Search (BFS), Depth First Search (DFS), and Uniform Cost Search (UCS). These algorithms are used to navigate through state spaces to find paths between nodes. The algorithms are provided, and your task is to understand them and complete analysis questions based on their behavior.
 
 ## Lab Structure
 
@@ -17,156 +17,98 @@ The lab is organized into three Java files:
   - Helper methods: `findAdjNodes()`, `findAdjEdges()`, `getCost()`
 - **Your Role**: Study this file to understand the data structure, but do NOT modify it
 
-### 2. **SearchAlgorithms.java** - Algorithm Implementation (Student Work)
-- **Purpose**: Implement the three search algorithms
-- **Contains** (with TODO sections):
-  - `bfs()` - TODO Exercise 1: Implement Breadth First Search
-  - `dfs()` - TODO Exercise 2: Implement Depth First Search
-  - `ucs()` - TODO Exercise 3: Implement Uniform Cost Search
-- **Your Role**: Complete the three TODO methods by implementing the algorithms
+### 2. **SearchAlgorithms.java** - Algorithm Implementation (Reference)
+- **Purpose**: Contains the three fully-implemented search algorithms
+- **Contains**:
+  - `bfs()` - Breadth First Search using Queue
+  - `dfs()` - Depth First Search using Stack
+  - `ucs()` - Uniform Cost Search using PriorityQueue
+  - Helper methods for statistics tracking
+- **Your Role**: Study and understand how each algorithm works; use these in your testing
 
-### 3. **SearchLab.java** - Testing Framework (Student Work)
-- **Purpose**: Test and compare the algorithms
-- **Contains** (with TODO sections):
-  - `runBFSTest()` - TODO Exercise 4: Test BFS
-  - `runDFSTest()` - TODO Exercise 5: Test DFS
-  - `runUCSTest()` - TODO Exercise 6: Test UCS
-  - `runComparativeAnalysis()` - TODO Exercise 7: Compare algorithms
-  - `runInteractiveMode()` - TODO Exercise 8: Interactive testing
-- **Your Role**: Complete the test methods and analyze results
+### 3. **SearchLab.java** - Testing and Lab Exercises
+- **Purpose**: Test the algorithms and complete analysis exercises
+- **Contains**:
+  - `runBFSTest()` - Tests and displays BFS results
+  - `runDFSTest()` - Tests and displays DFS results
+  - `runUCSTest()` - Tests and displays UCS results
+  - `runComparativeAnalysis()` - Compares all three algorithms on multiple test cases
+  - `runInteractiveMode()` - Interactive testing where you can input any source/destination
+  - Helper methods for result formatting and visualization
+- **Your Role**: Run the main program, observe results, and answer the analysis questions
 
 ---
 
-## Tasks
+## Tasks and Exercises
 
 ### Task 1: Understand the Graph Structure
 **Read and understand**: `UninformedSearches.java`
 - Study how cities are represented as nodes
 - Understand the adjacency matrix `map[][]` that stores edge costs
 - Review helper methods for finding adjacent nodes and edges
+- Examine the Node, Edge, and NodeComparator inner classes
 
-### Task 2: Implement BFS Algorithm
-**File**: `SearchAlgorithms.java` - Method `bfs()`
+---
 
-**Algorithm Overview**:
+### Task 2: Study the Algorithm Implementations
+**File**: `SearchAlgorithms.java`
+
+All three algorithms are fully implemented. Read and understand how they work:
+
+#### BFS (Breadth First Search)
 - Uses a **Queue** (FIFO - First In First Out)
 - Explores nodes level-by-level (breadth-first)
 - Finds the shortest path in terms of number of hops
 - May not find the lowest-cost path
 
-**Pseudocode**:
-```
-1. Create Queue and add source node
-2. Create list to track visited nodes
-3. While queue is not empty:
-   a. Dequeue a node
-   b. Add to visited list
-   c. If this is destination, return visited
-   d. Find all adjacent nodes
-   e. For each unvisited neighbor not in queue:
-      - Add to queue
-4. Update statistics and return visited list
-```
-
-**Requirements**:
-- Track `numOfNodesGenerated` (total nodes visited)
-- Track `maxNumOfNodesInMemory` (max frontier size)
-- Avoid revisiting nodes (check visited list and frontier)
-
----
-
-### Task 3: Implement DFS Algorithm
-**File**: `SearchAlgorithms.java` - Method `dfs()`
-
-**Algorithm Overview**:
+#### DFS (Depth First Search)
 - Uses a **Stack** (LIFO - Last In First Out)
 - Explores as deep as possible before backtracking
 - May find a different path than BFS
-- Uses more memory for very deep paths
+- Good for exploring deep paths with limited memory
 
-**Pseudocode**:
-```
-1. Create Stack and push source node
-2. Create list to track visited nodes
-3. While stack is not empty:
-   a. Pop a node
-   b. Add to visited list
-   c. If this is destination, return visited
-   d. Find all adjacent nodes
-   e. For each unvisited neighbor not in stack:
-      - Push to stack
-4. Update statistics and return visited list
-```
-
-**Requirements**:
-- Same tracking as BFS
-- Use Stack instead of Queue
-- All other logic similar to BFS
-
----
-
-### Task 4: Implement UCS Algorithm
-**File**: `SearchAlgorithms.java` - Method `ucs()`
-
-**Algorithm Overview**:
+#### UCS (Uniform Cost Search)
 - Uses a **PriorityQueue** (sorted by cumulative cost)
 - Always explores the lowest-cost node first
 - Guaranteed to find the minimum-cost path
-- Most computationally expensive
-
-**Pseudocode**:
-```
-1. Create PriorityQueue and add source node (cost = 0)
-2. Create list to track visited nodes
-3. While priority queue is not empty:
-   a. Remove lowest-cost node
-   b. Add to visited list
-   c. If this is destination, return visited
-   d. Find all adjacent nodes
-   e. For each unvisited neighbor not in queue:
-      - Calculate new cost = current_cost + edge_cost
-      - Update node cost
-      - Add to priority queue
-4. Update statistics and return visited list
-```
-
-**Requirements**:
-- Use `UninformedSearches.NodeComparator` for PriorityQueue
-- Track cumulative costs from source
-- Update cost when a cheaper path is found
+- Most thorough but most expensive algorithm
 
 ---
 
-### Task 5: Implement Test Methods
+### Task 3: Run the Lab
 **File**: `SearchLab.java`
 
-Implement the following test methods:
-
-1. **`runBFSTest()`** - Run BFS and display results
-2. **`runDFSTest()`** - Run DFS and display results
-3. **`runUCSTest()`** - Run UCS and display results
-4. **`runComparativeAnalysis()`** - Compare all three algorithms on multiple routes
-
-**Expected Output Format**:
+Compile and run the program:
+```bash
+javac UninformedSearches.java SearchAlgorithms.java SearchLab.java
+java SearchLab
 ```
-BFS Results:
-  Nodes Generated: 8
-  Max Nodes in Memory: 5
-  Path: 0 -> 2 -> 9 -> 12
-```
+
+The program will automatically:
+1. Run BFS test from Oradea (0) to Bucharest (12)
+2. Run DFS test from Oradea (0) to Bucharest (12)
+3. Run UCS test from Oradea (0) to Bucharest (12)
+4. Compare all three algorithms on two test cases with detailed statistics
+5. Display analysis questions
+6. Provide interactive mode for testing custom routes
 
 ---
 
-### Task 6: Analysis Questions
-After implementing all algorithms, answer these questions:
+### Task 4: Complete the Analysis Questions
+
+After running the lab, you will see output with test cases and a comparison table. Use this data to answer:
 
 1. **Which algorithm finds the shortest path in terms of number of hops?**
+   - Look at "Path Length" column in the comparison table
    - Answer: ___________
 
 2. **Which algorithm finds the lowest-cost path?**
+   - UCS finds the minimum total edge cost (optimal cost)
+   - Compare the actual paths and edge weights
    - Answer: ___________
 
 3. **Which algorithm uses the least memory?**
+   - Look at "Max Memory" column in the comparison table
    - Answer: ___________
 
 4. **When would you use each algorithm?**
@@ -179,20 +121,37 @@ After implementing all algorithms, answer these questions:
    - DFS: O(___) time, O(___) space
    - UCS: O(___) time, O(___) space
 
+6. **What do you observe about path length vs. path cost for different algorithms?**
+   - Answer: ___________
+
 ---
 
 ## Test Cases to Try
 
+The lab automatically runs these test cases:
+
 ### Test Case 1: Oradea (0) to Bucharest (12)
-```
-Expected Results:
-- BFS: Shortest path in hops
-- DFS: May take longer path
-- UCS: Lowest cost path
-```
+Compare how each algorithm finds a path between these cities.
 
 ### Test Case 2: Arad (2) to Bucharest (12)
-### Test Case 3: Sibiu (9) to Bucharest (12)
+See if the algorithms behave differently on this route.
+
+---
+
+## Interactive Mode
+
+After the automated tests, the program enters interactive mode where you can:
+
+1. Enter any source city (0-19)
+2. Enter any destination city (0-19)
+3. Choose which algorithm to use:
+   - Option 1: Run only BFS
+   - Option 2: Run only DFS
+   - Option 3: Run only UCS
+   - Option 4: Run all three and compare
+4. Continue testing other routes or exit
+
+This is great for experimenting and answering the analysis questions!
 
 ---
 
@@ -216,33 +175,43 @@ Expected Results:
 
 ## Submission Checklist
 
-- [ ] BFS algorithm implemented
-- [ ] DFS algorithm implemented
-- [ ] UCS algorithm implemented
-- [ ] All test methods implemented
-- [ ] Test cases run successfully
-- [ ] Analysis questions answered
-- [ ] Code is commented and readable
-- [ ] Statistics are tracked correctly
+- [ ] Studied `UninformedSearches.java` and understand the graph structure
+- [ ] Read through all three algorithm implementations in `SearchAlgorithms.java`
+- [ ] Successfully compiled and ran `SearchLab.java`
+- [ ] Reviewed output from all test cases
+- [ ] Answered all analysis questions
+- [ ] Tested custom routes using interactive mode
+- [ ] Compared algorithm performance across different routes
+- [ ] Understood time and space complexity tradeoffs
 
 ---
 
 ## Tips & Hints
 
-1. **Use HashSet for visited check**: Checking `visited.contains(node)` on ArrayList is O(n). Consider using HashSet for O(1) lookup.
+1. **Understand the output format**: 
+   - Path Length = number of cities in the path
+   - Nodes Generated = total cities visited during search
+   - Max Memory = maximum frontier size at any point
 
-2. **Initialize costs correctly**: For UCS, make sure child nodes get properly updated costs.
+2. **Trace through manually**: 
+   - Pick a small test case (e.g., Arad to Sibiu)
+   - Manually trace through how BFS would explore it
+   - Understand why DFS might take a different path
 
-3. **Debug output**: Print intermediate steps to understand what's happening:
-   ```java
-   System.out.println("Visiting: " + node.getCity());
-   System.out.println("Adjacent: " + adjNodes);
-   System.out.println("Frontier size: " + frontier.size());
-   ```
+3. **Compare performance**:
+   - BFS usually generates fewer nodes (explores level-by-level)
+   - DFS may find longer paths but uses different exploration order
+   - UCS takes the middle ground - explores efficiently but considers costs
 
-4. **Test incrementally**: Implement BFS first, then DFS (very similar), then UCS.
+4. **Interactive testing tips**:
+   - Test the same route with all three algorithms
+   - Note the differences in path length and nodes generated
+   - Try routes with multiple possible paths
 
-5. **Check edge cases**: What happens if source == destination? What if no path exists?
+5. **Key observations**:
+   - Shortest path (hops) ≠ Lowest cost path
+   - Memory usage varies significantly between algorithms
+   - Algorithm choice depends on your optimization goal (hops, cost, or memory)
 
 ---
 
@@ -256,8 +225,15 @@ Expected Results:
 
 ## Questions or Issues?
 
-If you encounter any issues:
-1. Check the graph structure in `UninformedSearches.java`
-2. Review the provided TODO comments
-3. Print debug output to trace algorithm execution
-4. Compare your implementation with the algorithm pseudocode
+If you encounter any issues running the lab:
+1. Make sure all three `.java` files are in the same directory
+2. Compile all files together: `javac UninformedSearches.java SearchAlgorithms.java SearchLab.java`
+3. Run the main program: `java SearchLab`
+4. Check the graph structure in `UninformedSearches.java` to understand the city connections
+5. Review the algorithm implementations in `SearchAlgorithms.java` if results are unexpected
+
+If you have questions about the algorithms:
+1. Research the specific algorithm (BFS, DFS, UCS) in your textbook
+2. Compare the implementation with the algorithm pseudocode
+3. Test with a simple route first and trace through manually
+4. Try the interactive mode to see patterns across different routes
