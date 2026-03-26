@@ -100,29 +100,31 @@ After running the lab, you will see output with test cases and a comparison tabl
 
 1. **Which algorithm finds the shortest path in terms of number of hops?**
    - Look at "Path Length" column in the comparison table
-   - Answer: ___________
+   - Answer: DFS
 
 2. **Which algorithm finds the lowest-cost path?**
    - UCS finds the minimum total edge cost (optimal cost)
    - Compare the actual paths and edge weights
-   - Answer: ___________
+   - Answer: UCS
 
 3. **Which algorithm uses the least memory?**
    - Look at "Max Memory" column in the comparison table
-   - Answer: ___________
+   - Answer: BFS
 
 4. **When would you use each algorithm?**
-   - BFS: ___________
-   - DFS: ___________
-   - UCS: ___________
+   - BFS: Use when you need the shortest path in an unweighted graph (or all edges have equal cost).
+   - DFS: Use when you want to explore all possible paths or go deep into a structure.
+   - UCS: Use when edges have different costs and you need the lowest-cost path.
 
 5. **What are the time and space complexities?**
-   - BFS: O(___) time, O(___) space
-   - DFS: O(___) time, O(___) space
-   - UCS: O(___) time, O(___) space
+   - BFS: O(V+E) time, O(V) space
+   - DFS: O(V+E) time, O(V) space
+   - UCS: O(ElogV) time, O(V) space
 
 6. **What do you observe about path length vs. path cost for different algorithms?**
-   - Answer: ___________
+   - Answer: BFS finds the path with the fewest number of edges (shortest path length), but not necessarily the lowest cost if edges have different weights.
+DFS does not guarantee shortest path or lowest cost—it just finds a path.
+UCS finds the path with the lowest total cost, which may not be the shortest in terms of number of edges.
 
 ---
 
