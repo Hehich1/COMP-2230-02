@@ -177,14 +177,14 @@ This is great for experimenting and answering the analysis questions!
 
 ## Submission Checklist
 
-- [ ] Studied `UninformedSearches.java` and understand the graph structure
-- [ ] Read through all three algorithm implementations in `SearchAlgorithms.java`
-- [ ] Successfully compiled and ran `SearchLab.java`
-- [ ] Reviewed output from all test cases
-- [ ] Answered all analysis questions
-- [ ] Tested custom routes using interactive mode
-- [ ] Compared algorithm performance across different routes
-- [ ] Understood time and space complexity tradeoffs
+- [x] Studied `UninformedSearches.java` and understand the graph structure
+- [x] Read through all three algorithm implementations in `SearchAlgorithms.java`
+- [x] Successfully compiled and ran `SearchLab.java`
+- [x] Reviewed output from all test cases
+- [x] Answered all analysis questions
+- [x] Tested custom routes using interactive mode
+- [x] Compared algorithm performance across different routes
+- [x] Understood time and space complexity tradeoffs
 
 ---
 
